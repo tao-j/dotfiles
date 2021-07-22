@@ -1,0 +1,15 @@
+alias ls="ls -hCF --color=auto"
+alias ll="ls -lh"
+alias la="ls -lah"
+
+alias rm="rm -i"
+
+alias df="df -h"
+alias du="du -h"
+
+alias grep="grep --color"
+
+PS1="\[\e[1;35m\]\u\[\e[0m\]@\[\e[1;33m\]\h\[\e[0m\] \[\e[1;32m\]\W\[\e[0m\]\$"
+. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

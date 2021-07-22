@@ -1,0 +1,54 @@
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="dstufft"
+DISABLE_AUTO_UPDATE="true"
+# ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+# HIST_STAMPS="yyyy-mm-dd"
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+plugins=(git emacs brew osx pip fzf autojump python)
+HOMEBREW_NO_AUTO_UPDATE=1
+
+setopt HIST_IGNORE_SPACE
+source $ZSH/oh-my-zsh.sh
+
+alias df='df -h'
+alias du='du -h'
+
+alias rm='rm -i'
+
+alias em='emacs'
+alias rscp='rsync -aP'
+alias c1="awk '{print $1}'"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

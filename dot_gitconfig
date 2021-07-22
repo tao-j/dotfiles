@@ -1,0 +1,19 @@
+[user]
+	name = Tao J
+	email = tao-j@outlook.com
+[core]
+	editor = vim
+[gc]
+	autoDetach = false
+[credential]
+	helper = manager
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = false
+[smartgit "gui"]
+	signOff = true
+[core]
+	excludefile = .DS_Store
+[pull]
+	ff = only
